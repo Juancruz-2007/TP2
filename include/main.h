@@ -10,8 +10,8 @@ extern "C"
 #include "multiplexado.h"
 #include "tiempo.h"
 #include "pulsadores.h"
-    extern volatile uint16_t valorPulsadores, valorAdc;
-    extern volatile uint32_t valorMV;
+    extern volatile uint16_t valor_de_puls, valor_de_ADC;
+    extern volatile uint32_t valor_en_milivolt;
 #ifdef __cplusplus
 } // extern "C"
 #endif

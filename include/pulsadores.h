@@ -11,10 +11,10 @@ extern "C"
 #include "main.h"
     enum ESTADO_PULSADOR
     {
-        UP,
-        FALL,
-        DOWN,
-        RAISE
+        SUELTO,
+        BAJANDO,
+        PULSADO,
+        SUBIENDO
     };
     void MDE_BOT(void);
 #ifdef __cplusplus

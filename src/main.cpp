@@ -2,8 +2,8 @@
 #include "main.h"
 
 // Variables volátiles (se pueden cambiar en interrupciones) para almacenar los valores leídos.
-volatile uint16_t valorPulsadores,valorAdc;// valorAdc: Medición del potenciómetro/sensor. valor_del_Pulsadores: Medición de los pulsadores.
-volatile uint32_t valorMV; // Variable para almacenar el valor convertido en milivoltios.
+volatile uint16_t valor_de_puls,valor_de_ADC;// valor_de_ADC: Medición del potenciómetro/sensor. valor_del_Pulsadores: Medición de los pulsadores.
+volatile uint32_t valor_en_milivolt; // Variable para almacenar el valor convertido en milivoltios.
 
 // -------- Funcion de inicializacion del conversor A/D --------- //
 static inline void initADC0(void)
@@ -70,7 +70,7 @@ ISR(ADC_vect)
   if (flag_adc == false)
   {
     // Almacena el resultado de la conversión anterior (Canal 0).
-    valorAdc = ADC; // medicion con el pote
+    valor_de_ADC = ADC; // medicion con el pote
 
     // Siguiente interrupción leerá el canal 1.
     flag_adc = true;
@@ -82,7 +82,7 @@ ISR(ADC_vect)
   else
   {
     // Almacena el resultado de la conversión anterior (Canal 1).
-    valorPulsadores = ADC; // valor del canal 0
+    valor_de_puls = ADC; // valor del canal 0
 
     // Siguiente interrupción leerá el canal 0.
     flag_adc = false;

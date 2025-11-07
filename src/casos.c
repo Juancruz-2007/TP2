@@ -25,23 +25,23 @@ void Casos(void)
 }
 void Caso_A(void)
 {
-    Multiplexado(valorAdc >> 2, BINARIO); // Máquina de Estado para el display en modo A
+    Multiplexado(valor_de_ADC >> 2, BINARIO); // Máquina de Estado para el display en modo A
 }
 
 void Caso_B(void)
 {
-    Multiplexado(valorAdc >> 2, DECIMAL); // Máquina de Estado para cada display
+    Multiplexado(valor_de_ADC >> 2, DECIMAL); // Máquina de Estado para cada display
 }
 
 void Caso_C(void)
 {
-    Multiplexado(valorAdc, DECIMAL); // Máquina de Estado para cada display
+    Multiplexado(valor_de_ADC, DECIMAL); // Máquina de Estado para cada display
 }
 
 void Caso_D(void)
 {
-    valorMV = ((uint32_t)valorAdc * 4883) / 1000;
-    Multiplexado(valorMV, DECIMAL); // Máquina de Estado para cada display
+    valor_en_milivolt = ((uint32_t)valor_de_ADC * 4883) / 1000;
+    Multiplexado(valor_en_milivolt, DECIMAL); // Máquina de Estado para cada display
 }
 
 void valor_pulsadores(void)
@@ -49,19 +49,19 @@ void valor_pulsadores(void)
     // Dependiendo de ese valor de tensión leído se pondrá el programa en un respectivo modo
 
 
-    if ((valorPulsadores >= 450) && (valorPulsadores <= 573))
+    if ((valor_de_puls >= 450) && (valor_de_puls <= 573))
     {
         Estado_Caso = Caso_a;//bot1 binario 8bit
     }
-    else if ((valorPulsadores >= 276) && (valorPulsadores <= 359))
+    else if ((valor_de_puls >= 276) && (valor_de_puls <= 359))
     {
         Estado_Caso = Caso_b;//bot2 decimal 8bit
     }
-    else if ((valorPulsadores >= 215) && (valorPulsadores <= 270))
+    else if ((valor_de_puls >= 215) && (valor_de_puls <= 270))
     {
         Estado_Caso = Caso_c;//bot3 decimal 10bit
     }
-    else if ((valorPulsadores >= 150) && (valorPulsadores <= 203))
+    else if ((valor_de_puls >= 150) && (valor_de_puls <= 203))
     {
         Estado_Caso = Caso_d;//bot4 muestra mili volt
     }
