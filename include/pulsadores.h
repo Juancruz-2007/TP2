@@ -9,6 +9,8 @@ extern "C"
 #include <Arduino.h>
 #include "casos.h"
 #include "main.h"
+#define BOT_A0 ((PINC>>PC0)&1)
+
     enum ESTADO_PULSADOR
     {
         SUELTO,

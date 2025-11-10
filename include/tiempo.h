@@ -7,7 +7,7 @@ extern "C"
 #endif
 
 #include <Arduino.h>
-    extern volatile uint64_t tiempo_bot, tiempo, tiempo_total;
+    extern volatile uint64_t time_bot, tiempo, time_total;
     void config_TIMER0(void);
 
 uint64_t get_time();

@@ -5,6 +5,12 @@
 extern "C"
 {
 #endif
+/* Si compilo desde un archivo Cpp, me compila lo siguiente en C */
+    // Este bloque es importante cuando trabajamos con C++.
+    // Si el código que incluye este archivo se compila como C++,
+    // extern "C" asegura que las funciones declaradas aquí se traten como C puro.
+    // Esto evita errores de enlace en proyectos que mezclan C y C++.
+
 
 #include <util/delay.h>
 #include "multiplexado.h"

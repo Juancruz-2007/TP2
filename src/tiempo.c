@@ -1,5 +1,5 @@
 #include "tiempo.h"
-volatile uint64_t tiempo_bot = 0, tiempo = 0, tiempo_total = 0;
+volatile uint64_t time_bot = 0, tiempo = 0, time_total = 0;
 
 void config_TIMER0(void)
 {
@@ -11,15 +11,15 @@ void config_TIMER0(void)
 
 ISR(TIMER0_COMPA_vect)
 {
-    if (tiempo_bot > 0)
+    if (time_bot > 0)
     {
-        tiempo_bot--;
+        time_bot--;
     }
 
-    tiempo_total++;
+    time_total++;
 }
 
 uint64_t get_time()
 {
-    return tiempo_total;
+    return time_total;
 }
